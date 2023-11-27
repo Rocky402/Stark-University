@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('./header.ejs')%>
+
+        <div class="container-fluid row">
+            <div class="col-md-3">
+                <%- include('./left.ejs')%>
+            </div>
+            <div class="col-md-9">
+
+
+                <h1 class="text-center my-5">View Registrations</h1>
+                <h4 class="text-center">Saved by the latest update in records</h4>
+
+                <div class="container my-5">
+                    <% if (viewReg.length>0){ %>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Applicant's First Name</th>
+                            <th>Applicant's Last Name</th>
+                            <th>Applicant's Email</th>
+                            <th>
+                                Edit or Delete
+                            </th>
+                        </tr>
+
+                    </thead>
+                        <tbody>
+                            <% for(var i = 0;i<viewReg.length;i++){%>
+                                <tr>
+                                    <td><%= viewReg[i].fname %></td>
+                                    <td><%= viewReg[i].lname %></td>
+                                    <td><%= viewReg[i].email %></td>
+                                    <td><a href="/edit/<%=viewReg[i].id %>"><button>Edit</button></a> /
+                                        <a href="/delete/<%=viewReg[i].id %>"><button>Delete</button></a></td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+
+                    </table>
+                    <% } else { %>
+                    No Record Found
+                <%} %>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+<!-- class="d-flex justify-content-center align-items-center" -->

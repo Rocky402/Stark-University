@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <%- include('./header.ejs')%>
+        <div class="container-fluid">
+            <div class="row bg-warning">
+                <div class="col-3"> <%- include('./left.ejs')%> </div>
+                <div class="col-9">
+                    <h1 class="text-center">Admissions Admin</h1>
+                    <div class="container my-5">
+                        <form class="row g-3" method="post" action="/admission" enctype="multipart/form-data">
+                            <div class="col-md-6">
+                                <label for="inputname1" class="form-label">Student's First Name</label>
+                                <input type="text" name="sfname" class="form-control" id="inputFname" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputname" class="form-label">Student's Last Name</label>
+                                <input type="text" name="slname" class="form-control" id="inputPassword4" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label"> Student's Email</label>
+                                <input type="email" name="semail" class="form-control" id="inputEmail" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress2" class="form-label">Student's Address</label>
+                                <input type="text" name="saddress" class="form-control" id="inputAddress2"
+                                    placeholder="Optional">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="autoSizingSelect">Student's Course</label>
+                                <select class="form-select" id="autoSizingSelect" name="scourse" required>
+                                    <option selected>Choose...</option>
+                                    <option value="STEM">STEM</option>
+                                    <option value="ARTS">Arts</option>
+                                    <option value="BUSINESS">Business</option>
+                                    <option value="LAW">Law</option>
+                                    <option value="AGRICULTURE">Agriculture</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="autoSizingSelect">Student's Year of Study</label>
+                                <select class="form-select" id="autoSizingSelect" name="syear">
+                                    <option selected>Choose...</option>
+                                    <option value="Year 1">Year 1</option>
+                                    <option value="Year 2">Year 2</option>
+                                    <option value="Year 3">Year 3</option>
+                                    <option value="Postgraduate">Postgraduate</option>
+                                    <option value="PhD">PhD</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Student's School Marksheet</label>
+                                <input class="form-control" type="file" id="formFile" name="sfile">
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="Gents">
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="Ladies">
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio3" value="other">
+                                    <label class="form-check-label" for="inlineRadio3">Other</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>

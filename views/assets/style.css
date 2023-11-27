@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.navy {
+    background-color: rgb(2, 2, 81);
+}
+
+.vid {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text {
+    position: absolute;
+    color: white;
+} 
+
+
+
+.cshad {
+    border: 1px solid;
+    box-shadow: 15px 15px 15px rgb(2, 2, 81);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.space {
+    font-family: 'Cinzel', serif;
+}
+
+.c-item {
+    height: 580px;
+  }
+  
+  .c-img {
+    height: 100%;
+    object-fit:cover;
+    filter: brightness(0.7);
+  }
+
+  .cco a {
+    color: aliceblue;
+    text-decoration: none;
+
+}
+
+.cco a:hover{
+    color: yellow;
+}
+
+td, th {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.bnone {
+    border: none;
+}

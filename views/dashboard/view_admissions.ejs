@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('./header.ejs')%>
+
+        <div class="container-fluid">
+            <div class="col-sm-3">
+                <%- include('./left.ejs')%>
+            </div>
+            <div class="col">
+
+
+                <h1 class="text-center my-5">View Admissions</h1>
+                <h4 class="text-center">Saved by the latest update in records</h4>
+
+
+                <div class="container my-5">
+                    <% if (viewAdmin.length>0){ %>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Applicant's First Name</th>
+                                    <th scope="col">Applicant's Last Name</th>
+                                    <th scope="col">Applicant's Email</th>
+                                    <th scope="col">Applicant's Address</th>
+                                    <th scope="col">Applicant's Course</th>
+                                    <th scope="col">Applicant's year of study</th>
+                                    <th scope="col">Applicant's files</th>
+                                    <th scope="col">Applicant's gender</th>
+                                    <th scope="col">
+                                        Edit or Delete
+                                    </th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <% for(var i=0;i<viewAdmin.length;i++){%>
+                                    <tr>
+                                        <td>
+                                            <%= viewAdmin[i].sfname %>
+                                        </td>
+                                        <td>
+                                            <%= viewAdmin[i].slname %>
+                                        </td>
+                                        <td>
+                                            <%= viewAdmin[i].semail %>
+                                        </td>
+                                        <td>
+                                            <%= viewAdmin[i].saddress%>
+                                        </td>
+                                        <td>
+                                            <%= viewAdmin[i].scourse %>
+                                        </td>
+                                        <td>
+                                            <%= viewAdmin[i].syear %>
+                                        </td>
+                                        <td>
+                                            <img src="http://localhost:8080/upload/<%=viewAdmin[i].sfile %>" height="50" width="50">
+                                            
+                                        </td>
+                                        <td>
+                                            <%= viewAdmin[i].inlineRadioOptions %>
+                                        </td>
+                                        <td><a href="/editA/<%= viewAdmin[i].id %>"><button>Edit</button></a> /
+                                            <a href="/deleteA/<%= viewAdmin[i].id %>"><button>Delete</button></a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+
+                        </table>
+                        <% } else { %>
+                            No Record Found
+                            <%} %>
+                </div>
+
+            </div>
+        </div>
+</body>

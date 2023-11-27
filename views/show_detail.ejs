@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show detail</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+ 
+</head>
+<body>
+    <%- include('./common/header.ejs') %>
+
+    <h1 class="text-center">Details</h1>
+    <div class="col">
+       
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Applicant's First Name</th>
+                        <th scope="col">Applicant's Last Name</th>
+                        <th scope="col">Applicant's Email</th>
+                        <th scope="col">Applicant's Address</th>
+                        <th scope="col">Applicant's Course</th>
+                        <th scope="col">Applicant's year of study</th>
+                        <th scope="col">Applicant's files</th>
+                        <th scope="col">Applicant's gender</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>
+                                <%= showdata.sfname %>
+                            </td>
+                            <td>
+                                <%= showdata.slname %>
+                            </td>
+                            <td>
+                                <%= showdata.semail %>
+                            </td>
+                            <td>
+                                <%= showdata.saddress %>
+                            </td>
+                            <td>
+                                <%= showdata.scourse %>
+                            </td>
+                            <td>
+                                <%= showdata.syear %>
+                            </td>
+                            <td>
+                                <img src="http://localhost:8080/upload/<%=showdata.sfile %>" height="50" width="50">
+                                
+                            </td>
+                            <td>
+                                <%= showdata.inlineRadioOptions %>
+                            </td>
+                        </tr>
+                       
+                </tbody>
+
+            </table>
+          
+    </div>
+
+    <%- include('./common/footer.ejs') %>
+</body>
+</html>
